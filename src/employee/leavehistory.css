@@ -1,0 +1,36 @@
+#leavehistory {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #leavehistory  td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #leavehistory  tr:nth-child(even){background-color: #ddd;}
+  
+  #leavehistory  tr:hover {background-color:hsl(278, 44%, 71%);}
+  
+  #leavehistory  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:hsl(265, 49%, 61%);
+    color: white;
+  }
+
+#leavehistory   button {
+    background-color:#a51c24;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+#leavehistory button:hover{
+  background-color: green;
+}

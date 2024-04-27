@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import MainNavBar from './main/MainNavBar';
+import AdminNavBar from './admin/AdminNavBar';
+import EmpNavBar from './employee/EmpNavBar';
 
-function App() {
+export default function App() {
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+  const [isEmployeeLoggedIn, setIsEmployeeLoggedIn] = useState(false);
+  
+
+  useEffect(() => {
+    const adminLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
+    const employeeLoggedIn = localStorage.getItem('isEmployeeLoggedIn') === 'true';
+    
+    setIsAdminLoggedIn(adminLoggedIn);
+    setIsEmployeeLoggedIn(employeeLoggedIn);
+  }, []);
+
+  const onAdminLogin = () => {
+    localStorage.setItem('isAdminLoggedIn', 'true');
+    setIsAdminLoggedIn(true);
+  };
+
+  const onEmployeeLogin = () => {
+    localStorage.setItem('isEmloyeeLoggedIn', 'true');
+    setIsEmployeeLoggedIn(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3 align="center">Employee Leave Management system</h3>
+      <Router>
+        {isAdminLoggedIn ? (
+          <AdminNavBar />
+        ) : isEmployeeLoggedIn ? (
+          <EmpNavBar />
+        ) : (
+          <MainNavBar
+            onAdminLogin={onAdminLogin}
+            onEmployeeLogin={onEmployeeLogin}
+          />
+        )}
+      </Router>
     </div>
   );
 }
-
-export default App;
