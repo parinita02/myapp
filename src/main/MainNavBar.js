@@ -24,8 +24,8 @@ export default function MainNavBar({onAdminLogin,onEmployeeLogin}) {
           <li className="dropdown">
             <Link>🔒Login</Link>
             <div className="dropdown-content">
-              <Link to="https://main--elms717381.netlify.app/employeelogin">Employee Login</Link>
-              <Link to="https://main--elms717381.netlify.app/adminlogin">Admin Login</Link>
+              <Link to="https://elms717381.netlify.app/employeelogin">Employee Login</Link>
+              <Link to="https://elms717381.netlify.app/adminlogin">Admin Login</Link>
             </div>
           </li>
           

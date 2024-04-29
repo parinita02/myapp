@@ -16,7 +16,7 @@ export default function EmpNavBar() {
     localStorage.removeItem('isEmployeeLoggedIn');
     localStorage.removeItem('employee');
 
-    navigate('https://main--elms717381.netlify.app/employeelogin');
+    navigate('https://elms717381.netlify.app/employeelogin');
     window.location.reload()
   };
 
