@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
@@ -16,7 +15,7 @@ export default function MainNavBar({onAdminLogin,onEmployeeLogin}) {
         <ul>
           <div style={{ float: "left" }}>
             <li>
-              <Link to="/home" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </li>
@@ -46,7 +45,7 @@ export default function MainNavBar({onAdminLogin,onEmployeeLogin}) {
       </nav>
 
       <Routes>
-        <Route path="/home" element={<Home />} exact />
+        <Route path="/" element={<Home />} exact />
         <Route path="/about" element={<About />} exact />
         <Route path="/contactus" element={<ContactUs />} exact />
         <Route path="/adminlogin" element={<AdminLogin onAdminLogin={onAdminLogin}/>} exact />

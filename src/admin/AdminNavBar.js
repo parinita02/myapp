@@ -37,7 +37,7 @@ export default function AdminNavBar() {
           <li>
             <Link to="/admin/adminprofile">MyProfile</Link>
           </li>
-          <li style={{ float: "right" }}><button className="submit" onClick={handleLogout}>Logout</button></li>
+          <li style={{ float:"right"}}><button className="submit" onClick={handleLogout}>Logout</button></li>
          
         </ul>
       </nav>

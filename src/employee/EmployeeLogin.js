@@ -51,7 +51,7 @@ export default function EmployeeLogin({ onEmployeeLogin }) {
   <StyledContainer>
   <Grid container spacing={0}>
       <Grid item xs={12} md={6}>
-          <img src={image1} alt="image" style={{ width: '100%' }} />
+          <img src={image1} alt="Employee login background img" style={{ width: '100%' }} />
       </Grid>
       <Grid item xs={12} md={6}>
           <StyledPaper elevation={3}>
@@ -61,7 +61,7 @@ export default function EmployeeLogin({ onEmployeeLogin }) {
     {
       message ? <h4 align="center">{message}</h4> : <h4 align="center" style={{color:"red"}}>{error}</h4>
     }
-    <form onSubmit={handleSubmit}  class="form1" >
+    <form onSubmit={handleSubmit}  className="form1" >
       <div>
         <label>Email</label>
         <input className="un" type="email" id="email" value={formData.email} onChange={handleChange} required />

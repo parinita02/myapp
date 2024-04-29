@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import config from '../config';
 import '../employee/leavehistory.css';
 
 export default function LeaveRequests() {
-  const [employeeData, setEmployeeData] = useState("");
+  const [employeeData, setEmployeeData] = useState({employeeid: ''});
   const [leaverequests, setLeaveRequests] = useState([]);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -19,12 +19,22 @@ export default function LeaveRequests() {
 
   useEffect(() => {
     fetchLeaveRequests();
-  }, []); // Add an empty dependency array to useEffect to run only once
+  }); 
 
+  // const fetchLeaveRequests = async () => {
+  //   try {
+  //     const response = await axios.get(`${config.url}/viewleaverequestsbyemployee/${employeeData.employeeid}`);
+  //     setLeaveRequests(response.data); // Set the data property of the response
+  //   } catch (error) {
+  //     setError(error.response.data);
+  //   }
+  // }
   const fetchLeaveRequests = async () => {
     try {
-      const response = await axios.get(`${config.url}/viewleaverequestsbyemployee/${employeeData.employeeid}`);
-      setLeaveRequests(response.data); // Set the data property of the response
+      if (employeeData?.employeeid) {
+        const response = await axios.get(`${config.url}/viewleaverequestsbyemployee/${employeeData.employeeid}`);
+        setLeaveRequests(response.data); // Set the data property of the response
+      }
     } catch (error) {
       setError(error.response.data);
     }
@@ -88,7 +98,7 @@ export default function LeaveRequests() {
             </tr>
           )}
         </tbody>
-      </table>+
+      </table>
     </div>
   );
 }
