@@ -2,6 +2,7 @@ import React, { useState,useRef } from 'react';
 import axios from 'axios';
 import './form.css'
 import config from '../config'
+const deploymentUrl = 'https://elms717381.netlify.app';
 
 
 export default function RequestLeave() {
@@ -42,7 +43,7 @@ export default function RequestLeave() {
       formDataToSend.append('reason',formData.reason);
       formDataToSend.append('file',formData.file)
 
-      const response = await axios.post(`${config.url}/applyleave`, formDataToSend, {
+      const response = await axios.post(`${deploymentUrl}/applyleave`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

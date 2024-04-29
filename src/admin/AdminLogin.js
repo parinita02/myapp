@@ -8,6 +8,9 @@ import { Container, Grid } from '@mui/material';
 import styled from 'styled-components';
 import image1 from "../main/image1.png"
 
+const deploymentUrl = 'https://elms717381.netlify.app';
+
+
 
 export default function AdminLogin({ onAdminLogin }) {
   const [formData, setFormData] = useState({
@@ -27,14 +30,15 @@ export default function AdminLogin({ onAdminLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${config.url}/checkadminlogin`, formData);
+      const response = await axios.post(`${deploymentUrl}/checkadminlogin`, formData);
       if (response.data != null) 
       {
         onAdminLogin(); 
 
         localStorage.setItem('admin', JSON.stringify(response.data));
         
-        navigate("/admin/admindashboard");
+        navigate(`${deploymentUrl}/adminlogin`);
+
       } 
       else 
       {

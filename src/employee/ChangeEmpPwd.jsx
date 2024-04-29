@@ -3,6 +3,7 @@ import '../admin/Admin.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import config from '../config'
+const deploymentUrl = 'https://elms717381.netlify.app';
 
 export default function ChangeEmpPwd() {
 
@@ -34,12 +35,12 @@ export default function ChangeEmpPwd() {
     e.preventDefault();
     try 
     {
-      const response = await axios.put(`${config.url}/changeemppwd`, {...formData,"email":empData.email});
+      const response = await axios.put(`${deploymentUrl}/changeemppwd`, {...formData,"email":empData.email});
       if (response.data != null) 
       {
         localStorage.removeItem('isEmployeeLoggedIn');
         localStorage.removeItem('employee');
-        navigate('/employeelogin');
+        navigate(`${deploymentUrl}/employeelogin`);
         window.location.reload()
       } 
       else 

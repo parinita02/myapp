@@ -3,14 +3,14 @@ import axios from 'axios';
 import '../employee/leavehistory.css'
 import AdminNavBar from './AdminNavBar';
 import config from '../config';
-
+const deploymentUrl = 'https://elms717381.netlify.app';
 
 export default function ViewEmployees() {
   const [employees, setEmployees] = useState([]);
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get(`${config.url}/viewemployees`);
+      const response = await axios.get(`${deploymentUrl}/viewemployees`);
       setEmployees(response.data);
     } catch (error) {
       console.error(error.message);
@@ -23,7 +23,7 @@ export default function ViewEmployees() {
 
   const deleteemployee = async (email) => {
     try {
-      await axios.delete(`${config.url}/deleteemployee/${email}`);
+      await axios.delete(`${deploymentUrl}/deleteemployee/${email}`);
       fetchEmployees();
     } catch (error) {
       console.error(error.message);
@@ -65,9 +65,9 @@ export default function ViewEmployees() {
         <td>{employee.employeeid}</td>
         <td>
         {employee.file && (employee.file.endsWith('.jpg') || employee.file.endsWith('.jpeg') || employee.file.endsWith('.png')) ? (
-  <img src={`${config.url}/eventimage/${employee.file}`} alt="Event" style={{ width: '250px', height: '250px' }} />
+  <img src={`${deploymentUrl}/eventimage/${employee.file}`} alt="Event" style={{ width: '250px', height: '250px' }} />
 ) : (
-  <a href={`${config.url}/eventimage/${employee.file}`}>Click Here</a>
+  <a href={`${deploymentUrl}/eventimage/${employee.file}`}>Click Here</a>
 )}
         </td>
         <td>
