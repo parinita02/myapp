@@ -48,8 +48,8 @@ export default function MainNavBar({onAdminLogin,onEmployeeLogin}) {
         <Route path="/" element={<Home />} exact />
         <Route path="/about" element={<About />} exact />
         <Route path="/contactus" element={<ContactUs />} exact />
-        <Route path="/adminlogin" element={<AdminLogin onAdminLogin={onAdminLogin}/>} exact />
-        <Route path="/employeelogin" element={<EmployeeLogin onEmployeeLogin={onEmployeeLogin}/>} exact />
+        <Route path="https://elms717381.netlify.app/adminlogin" element={<AdminLogin onAdminLogin={onAdminLogin}/>} exact />
+        <Route path="https://elms717381.netlify.app/employeelogin" element={<EmployeeLogin onEmployeeLogin={onEmployeeLogin}/>} exact />
       </Routes>
     </div>
   );

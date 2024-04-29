@@ -35,7 +35,7 @@ export default function AdminDashboard() {
     {counts ? (
       <div>
      <section className="page-contain">
-        <a href="/admin/viewemployees"  className="data-card">
+        <a href="https://elms717381.netlify.app/admin/viewemployees"  className="data-card">
           <h3>{counts.employeesCount}</h3>
           <h4>Employees</h4>
           <span className="link-text">

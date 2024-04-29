@@ -32,7 +32,7 @@ export default function AdminNavBar() {
             <Link to="/admin/leaverequests">LeaveRequests</Link>
           </li>
           <li>
-            <Link to="/admin/viewemployees">Employees List</Link>
+            <Link to="https://elms717381.netlify.app/admin/viewemployees">Employees List</Link>
           </li>
           <li>
             <Link to="/admin/adminprofile">MyProfile</Link>
@@ -47,7 +47,7 @@ export default function AdminNavBar() {
         <Route path="/admin/admindashboard" element={<Dashboard />} />
         <Route path="/admin/registration" element={<Registration/>}/>
         <Route path="/admin/leaverequests" element={<LeaveRequests/>}  />
-        <Route path="/admin/viewemployees" element={<ViewEmployees/>}  />
+        <Route path="https://elms717381.netlify.app/admin/viewemployees" element={<ViewEmployees/>}  />
         <Route path="/admin/adminprofile" element={<AdminProfile/>}/>
       </Routes>
     </div>
