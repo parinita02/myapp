@@ -14,7 +14,7 @@ export default function AdminNavBar() {
   const handleLogout = () => {
     localStorage.removeItem('isAdminLoggedIn');
     localStorage.removeItem('admin');
-    navigate('/adminlogin');
+    navigate('https://main--elms717381.netlify.app/adminlogin');
     window.location.reload()
   };
 
