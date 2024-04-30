@@ -6,9 +6,8 @@ import "./style.css";
 import EmployeeLogin from '../employee/EmployeeLogin'
 import AdminLogin from '../admin/AdminLogin'
 
-const deploymentUrl = 'https://elms717381.netlify.app';
+export default function MainNavBar({onAdminLogin,onEmployeeLogin}) {
 
-export default function MainNavBar({onAdminLogin, onEmployeeLogin}) {
 
   return (
     <div>
@@ -16,7 +15,7 @@ export default function MainNavBar({onAdminLogin, onEmployeeLogin}) {
         <ul>
           <div style={{ float: "left" }}>
             <li>
-              <Link to={`${deploymentUrl}/`} className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </li>
@@ -25,19 +24,19 @@ export default function MainNavBar({onAdminLogin, onEmployeeLogin}) {
           <li className="dropdown">
             <Link>🔒Login</Link>
             <div className="dropdown-content">
-              <Link to={`${deploymentUrl}/employeelogin`}>Employee Login</Link>
-              <Link to={`${deploymentUrl}/adminlogin`}>Admin Login</Link>
+              <Link to="/employeelogin">Employee Login</Link>
+              <Link to="/adminlogin">Admin Login</Link>
             </div>
           </li>
           
           <div style={{ float: "right" }}>
             <li>
-              <Link to={`${deploymentUrl}/about`} className="nav-link">
+              <Link to="/about" className="nav-link">
                 About
               </Link>
             </li>
             <li>
-              <Link to={`${deploymentUrl}/contactus`} className="nav-link">
+              <Link to="/contactus" className="nav-link">
                Contact Us 📞
               </Link>
             </li>
@@ -46,11 +45,11 @@ export default function MainNavBar({onAdminLogin, onEmployeeLogin}) {
       </nav>
 
       <Routes>
-        <Route path={`${deploymentUrl}/`} element={<Home />} exact />
-        <Route path={`${deploymentUrl}/about`} element={<About />} exact />
-        <Route path={`${deploymentUrl}/contactus`} element={<ContactUs />} exact />
-        <Route path={`${deploymentUrl}/adminlogin`} element={<AdminLogin onAdminLogin={onAdminLogin}/>} exact />
-        <Route path={`${deploymentUrl}/employeelogin`} element={<EmployeeLogin onEmployeeLogin={onEmployeeLogin}/>} exact />
+        <Route path="/" element={<Home />} exact />
+        <Route path="/about" element={<About />} exact />
+        <Route path="/contactus" element={<ContactUs />} exact />
+        <Route path="/adminlogin" element={<AdminLogin onAdminLogin={onAdminLogin}/>} exact />
+        <Route path="/employeelogin" element={<EmployeeLogin onEmployeeLogin={onEmployeeLogin}/>} exact />
       </Routes>
     </div>
   );

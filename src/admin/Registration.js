@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './form.css';
 import config from '../config'
-const deploymentUrl = 'https://elms717381.netlify.app';
 
 
 export default function Registration() {
@@ -49,7 +48,7 @@ export default function Registration() {
       formDataToSend.append('employeeid', formData.employeeid);
       formDataToSend.append('file', formData.file); // Append the file object // Append the file object 
  
-      const response = await axios.post(`${deploymentUrl}/insert`, formDataToSend, { 
+      const response = await axios.post(`${config.url}/insert`, formDataToSend, { 
         headers: { 
           'Content-Type': 'multipart/form-data' // Set content type for FormData 
         } 

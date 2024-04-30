@@ -4,11 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import '../admin/Admin.css'
 import config from '../config'
 
-
 import { Container, Grid } from '@mui/material';
 import styled from 'styled-components';
 import image1 from "../main/image1.png"
-const deploymentUrl = 'https://elms717381.netlify.app';
 
 export default function EmployeeLogin({ onEmployeeLogin }) {
   const [formData, setFormData] = useState({
@@ -28,14 +26,14 @@ export default function EmployeeLogin({ onEmployeeLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${deploymentUrl}/checkemployeelogin`, formData);
+      const response = await axios.post(`${config.url}/checkemployeelogin`, formData);
       if (response.data != null) 
       {
         onEmployeeLogin(); 
 
         localStorage.setItem('employee', JSON.stringify(response.data));
         
-        navigate(`${deploymentUrl}/employee/empdashboard`);
+        navigate("/employee/empdashboard");
       } 
       else 
       {

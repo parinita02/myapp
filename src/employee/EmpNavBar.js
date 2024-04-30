@@ -2,7 +2,6 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import './EmpNavBar.css'
 
-
 import Dashboard from './EmpDashboard'
 import LeaveHistory from './LeaveHistory'
 import MyProfile from './EmpProfile'
@@ -10,7 +9,6 @@ import RequestLeave from './RequestLeave'
 import ChangeEmpPwd from './ChangeEmpPwd'
 import { useNavigate } from 'react-router-dom'
 
-const deploymentUrl = 'https://elms717381.netlify.app';
 
 export default function EmpNavBar() {
   const navigate = useNavigate();
@@ -18,7 +16,7 @@ export default function EmpNavBar() {
     localStorage.removeItem('isEmployeeLoggedIn');
     localStorage.removeItem('employee');
 
-    navigate(`${deploymentUrl}/employeelogin`);
+    navigate('/employeelogin');
     window.location.reload()
   };
 
@@ -27,19 +25,19 @@ export default function EmpNavBar() {
       <nav className="nav-container">
         <ul>
           <li>
-            <Link to={`${deploymentUrl}/employee/empdashboard`}>Dashboard</Link>
+            <Link to="/employee/empdashboard">Dashboard</Link>
           </li>
           <li>
-            <Link to={`${deploymentUrl}/employee/leavehistory`}>Leave History</Link>
+            <Link to="/employee/leavehistory">Leave History</Link>
           </li>
           <li>
-            <Link to={`${deploymentUrl}/employee/requestleave`}>Request Leave</Link>
+            <Link to="/employee/requestleave">Request Leave</Link>
           </li>
           <li>
-            <Link to={`${deploymentUrl}/employee/empprofile`}>My Profile</Link>
+            <Link to="/employee/empprofile">My Profile</Link>
           </li>
           <li>
-            <Link to={`${deploymentUrl}/employee/changeemppwd`}>Change Password</Link>
+            <Link to="/employee/changeemppwd">Change Password</Link>
           </li>
         </ul>
         <ul>
@@ -51,11 +49,11 @@ export default function EmpNavBar() {
 
       <Routes>
         <Route path="/employee/*" element={<EmpNavBar />} exact />
-        <Route path={`${deploymentUrl}/employee/empdashboard`} element={<Dashboard/>}exact />
-        <Route path={`${deploymentUrl}/employee/leavehistory`} element={<LeaveHistory />}exact  />
-        <Route path={`${deploymentUrl}/employee/requestleave`} element={<RequestLeave />} exact/>
-        <Route path={`${deploymentUrl}/employee/empprofile`} element={<MyProfile />} exact />
-        <Route path={`${deploymentUrl}/employee/changeemppwd`} element={<ChangeEmpPwd />} exact />
+        <Route path="/employee/empdashboard" element={<Dashboard/>}exact />
+        <Route path="/employee/leavehistory" element={<LeaveHistory />}exact  />
+        <Route path="/employee/requestleave" element={<RequestLeave />} exact/>
+        <Route path="/employee/empprofile" element={<MyProfile />} exact />
+        <Route path="/employee/changeemppwd" element={<ChangeEmpPwd />} exact />
 
       </Routes>
     </div>

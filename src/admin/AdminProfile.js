@@ -1,7 +1,6 @@
 import React from 'react'
 import './adminprofile.css'
 import profile from './image1.jpg'
-import AdminNavBar from './AdminNavBar'
 
 export default function AdminProfile() {
  

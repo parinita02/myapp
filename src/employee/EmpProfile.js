@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './EmpNavBar'
-import EmpNavBar from './EmpNavBar'
 import './empprofile.css'
 import profile from './image1.jpg'
 

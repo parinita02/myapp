@@ -12,7 +12,7 @@ export default function ContactUs() {
             <br></br>
             <br></br>
             <br></br>
-              <img src={photo} alt="image" style={{ width: '90%' }} />
+              <img src={photo} alt="ima" style={{ width: '90%' }} />
           </Grid>
           <Grid item xs={12} md={6}>
               <StyledPaper elevation={3}>

@@ -8,7 +8,7 @@ const Home = () => {
         <StyledContainer>
             <Grid container spacing={0}>
                 <Grid item xs={12} md={6}>
-                    <img src={image1} alt="image" style={{ width: '100%' }} />
+                    <img src={image1} alt="ima" style={{ width: '100%' }} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <StyledPaper elevation={3}>

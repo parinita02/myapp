@@ -3,8 +3,6 @@ import axios from 'axios';
 import config from '../config';
 import '../employee/leavehistory.css';
 
-const deploymentUrl = 'https://elms717381.netlify.app';
-
 export default function LeaveRequests() {
   const [employeeData, setEmployeeData] = useState({employeeid: ''});
   const [leaverequests, setLeaveRequests] = useState([]);
@@ -34,7 +32,7 @@ export default function LeaveRequests() {
   const fetchLeaveRequests = async () => {
     try {
       if (employeeData?.employeeid) {
-        const response = await axios.get(`${deploymentUrl}/viewleaverequestsbyemployee/${employeeData.employeeid}`);
+        const response = await axios.get(`${config.url}/viewleaverequestsbyemployee/${employeeData.employeeid}`);
         setLeaveRequests(response.data); // Set the data property of the response
       }
     } catch (error) {
@@ -44,7 +42,7 @@ export default function LeaveRequests() {
 
   const handleStatusChange = async (employeeid, status) => {
     try {
-      const response = await axios.post(`${deploymentUrl}/changeleavestatus`, { employeeid, status });
+      const response = await axios.post(`${config.url}/changeleavestatus`, { employeeid, status });
       setLeaveRequests(response.data); // Set the data property of the response
     } catch (error) {
       setError(error.response.data);
